@@ -1,0 +1,30 @@
+
+{
+  "items": [
+    {
+      "name": "Idowu Daniel",
+      "text": "Loren ipsum whatever whatever text this can be Loren ipsum whatever whatever text this can be Loren ipsum whatever whatever text this can be Loren ipsum whatever whatever text this can be",
+      "image": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+      "job": "Front-end Developer" 
+    },
+    {
+      "name": "Lauren Kate",
+      "text": "Loren ipsum whatever whatever text this can be Loren ipsum whatever whatever text this can be Loren ipsum whatever whatever text this can be Loren ipsum whatever whatever text this can be",
+      "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fHdvbWFufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+      "job": "Accountant" 
+    
+    },
+    {
+      "name": "Paul King",
+      "text": "Loren ipsum whatever whatever text this can be Loren ipsum whatever whatever text this can be Loren ipsum whatever whatever text this can be Loren ipsum whatever whatever text this can be",
+      "image": "https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+      "job": "Content Creator" 
+    },
+    {
+      "name": "Evelyn Helen",
+      "text": "Loren ipsum whatever whatever text this can be Loren ipsum whatever whatever text this can be Loren ipsum whatever whatever text this can be Loren ipsum whatever whatever text this can be",
+      "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fHdvbWFufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+      "job": "Actress" 
+    }
+  ]
+}
