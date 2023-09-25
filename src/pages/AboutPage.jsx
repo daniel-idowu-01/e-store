@@ -1,20 +1,21 @@
-import React from 'react'
-import { useEffect } from 'react'
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import TeamMember from '../components/TeamMember'
-import data from '../teamData.json'
-import jsonData from '../data.json';
-import { CiDeliveryTruck } from 'react-icons/ci'
-import { BsShieldCheck } from 'react-icons/bs'
-import { BiPackage } from 'react-icons/bi'
-import { ImHeadphones } from 'react-icons/im'
-import ClientComp from '../components/ClientComp'
-import NewsletterImg from '../images/newsletter_img.png'
+import React, { useEffect } from 'react'
+import data from '../data/teamData.json'
+import jsonData from '../data/data.json';
+import Footer from '../components/Footer';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import TeamMember from '../components/TeamMember'
+import ClientComp from '../components/ClientComp'
+import NewsletterImg from '../images/newsletter_img.png'
+
+import { BiPackage } from 'react-icons/bi'
+import { ImHeadphones } from 'react-icons/im'
+import { BsShieldCheck } from 'react-icons/bs'
+import { CiDeliveryTruck } from 'react-icons/ci'
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { IoMdCheckmarkCircleOutline } from 'react-icons/io'
-import Footer from '../components/Footer';
+
 
 
 const AboutPage = () => {

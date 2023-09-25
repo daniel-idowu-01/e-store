@@ -1,9 +1,9 @@
-import React from 'react'
-import { useContext, useEffect } from 'react'
-import CartContext from '../CartContext'
-import FavoriteContext from '../FavoriteContext'
-import { AiOutlineShoppingCart } from 'react-icons/ai'
+import CartContext from '../context/CartContext'
+import React, { useContext, useEffect } from 'react'
+import FavoriteContext from '../context/FavoriteContext'
+
 import { motion, useAnimation } from 'framer-motion';
+import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { useInView } from 'react-intersection-observer';
 
 const Favorites = () => {

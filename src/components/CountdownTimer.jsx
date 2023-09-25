@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 const CountdownTimer = ({ hours = 10, minutes = 20, seconds = 5 }) => {
+
+  const timerStyle = 'text-coolblue shadow-md rounded-lg md:text-3xl p-2 px-5 text-center'
+
+  // code for the functionality  of the timer
   const [time, setTime] = useState({
     hours: parseInt(hours),
     minutes: parseInt(minutes),
@@ -51,17 +55,17 @@ const CountdownTimer = ({ hours = 10, minutes = 20, seconds = 5 }) => {
 
   return (
     <div className='flex justify-evenly md:justify-start'>
-      <div className='text-coolblue shadow-md rounded-lg md:text-3xl p-2 px-5 text-center'>
+      <div className={timerStyle}>
         <span> {formatTime(remainingHours)} </span>
         <span className='block text-sm'>Hours </span>
       </div>
 
-      <div className='text-coolblue shadow-md rounded-lg md:text-3xl p-2 px-5 text-center'>
+      <div className={timerStyle}>
         <span> {formatTime(remainingMinutes)} </span>
         <span className='block text-sm'>Minutes</span> 
       </div>
 
-      <div className='text-coolblue shadow-md rounded-lg md:text-3xl p-2 px-5 text-center'>
+      <div className={timerStyle}>
         <span> {formatTime(remainingSeconds)} </span> 
         <span className='block text-sm'>Seconds</span> 
       </div>

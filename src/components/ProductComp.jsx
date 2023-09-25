@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
+import CartContext from '../context/CartContext'
 import FullStar from '../images/full-star.png'
-import { AiOutlineShoppingCart } from 'react-icons/ai'
-import { AiOutlineHeart } from 'react-icons/ai'
-import { useContext } from 'react'
-import CartContext from '../CartContext'
-import FavoriteContext from '../FavoriteContext'
+import FavoriteContext from '../context/FavoriteContext'
+import React, { useState, useContext } from 'react'
+import { AiOutlineShoppingCart, AiOutlineHeart } from 'react-icons/ai'
 
 const ProductComp = ({name, price, image, count}) => {
 
@@ -12,7 +10,6 @@ const ProductComp = ({name, price, image, count}) => {
   const {alertWishList} = useContext(FavoriteContext)
   const {addToCart} = useContext(CartContext)
   const {addToFavorites} = useContext(FavoriteContext)
-  const [showButtons, setShowButtons] = useState(false)
 
   //function when item is added to cart
   const cartFunction = () => {
@@ -28,11 +25,9 @@ const ProductComp = ({name, price, image, count}) => {
   
   return (
     <div
-     className={` relative h-80 w-full md:w-60 m-1`}
-     onMouseEnter={() => setShowButtons(true)}
-     onMouseLeave={() => setShowButtons(false)}>
+     className={` relative h-80 w-full md:w-60 m-1`}>
       
-      <div className={`${showButtons && 'opacity-50'}`}>
+      <div className={`'opacity-50'}`}>
         <img src={image} alt='' className='border h-52 w-full object-contain' />
 
         <div className='border bg-coolblue bg-opacity-5'>
@@ -56,7 +51,7 @@ const ProductComp = ({name, price, image, count}) => {
       
 
       {/* Elements to show on hover */}
-        { showButtons && <div
+        <div
          className='absolute flex items-center justify-center top-0 w-full h-full'>
           <div className='flex gap-4'>
             <button
@@ -66,7 +61,7 @@ const ProductComp = ({name, price, image, count}) => {
             onClick={favoriteFunction}
              className='inline-block text-3xl bg-coolblue rounded-full p-2 text-opacity-70 hover:text-white'> <AiOutlineHeart /> </button>
           </div>
-        </div>}
+        </div>
       </div>
       
       

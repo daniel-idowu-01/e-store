@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext, useEffect } from 'react'
-import CartContext from '../CartContext'
+import CartContext from '../context/CartContext'
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 

@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
-import { AiOutlineSearch } from 'react-icons/ai'
-import { AiOutlineHeart } from 'react-icons/ai'
-import { AiOutlineUser } from 'react-icons/ai'
-import { BsHandbag } from 'react-icons/bs'
 import { FaBars } from "react-icons/fa"
-import { VscChromeClose } from "react-icons/vsc"
 import { Link } from 'react-router-dom'
-import CartContext from '../CartContext'
-import FavoriteContext from '../FavoriteContext'
-import { useContext } from 'react'
+import { BsHandbag } from 'react-icons/bs'
+import { AiOutlineUser } from 'react-icons/ai'
+import { AiOutlineHeart } from 'react-icons/ai'
+import { AiOutlineSearch } from 'react-icons/ai'
+import CartContext from '../context/CartContext'
+import { VscChromeClose } from "react-icons/vsc"
+import React, { useState, useContext } from 'react'
+import FavoriteContext from '../context/FavoriteContext'
 
 const NavBar = () => {
 
@@ -25,7 +24,7 @@ const NavBar = () => {
     <nav className='sticky top-0 z-10 bg-white shadow-sm'>
       <div className='flex justify-between py-7 px-10 md:px-20'>
         <div className=''>
-          <Link to='/' className=' font-bold'><span className='text-coolblue italic text-lg'>E</span>-STORE</Link>
+          <Link to='/' className='font-bold'><span className='text-coolblue italic text-lg'>E</span>-STORE</Link>
         </div>
 
         <div className='flex justify-between gap-10 relative left-14'>

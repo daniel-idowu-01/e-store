@@ -1,7 +1,7 @@
 import React from 'react'
-import FullMoon from '../images/full_moon.jpg'
-import { AiOutlineMail } from 'react-icons/ai'
+/* import { Fullmoon } from '../images' */
 import { BsGlobe2 } from 'react-icons/bs'
+import { AiOutlineMail } from 'react-icons/ai'
 import { AiOutlinePhone } from 'react-icons/ai'
 
 
@@ -12,7 +12,7 @@ const ContactComp = (props) => {
         <p
          className='md:w-1/4 text-center font-semibold text-xl'>
           { props.office }
-          </p>
+        </p>
 
         {/* //////////////// */}
 

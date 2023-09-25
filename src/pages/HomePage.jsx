@@ -1,26 +1,15 @@
-import React from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import '../index.css'
-import jsonData from '../data.json';
-import HomeImg from '../images/home-image.png'
-import { MdOutlineLocalShipping } from 'react-icons/md'
-import { TbTruckReturn } from 'react-icons/tb'
-import { RiCustomerService2Fill } from 'react-icons/ri'
-import { useState, useEffect } from 'react'
-import SmallCard from '../components/SmallCard'
-import ProductComp from '../components/ProductComp'
-import Search from '../images/search.svg'
-import AddToCart from '../images/add_to_cart.svg'
-import Delivery from '../images/delivery.svg'
-import ShoppingBags from '../images/shopping_bags.svg'
-import ClientComp from '../components/ClientComp'
-import NewsletterImg from '../images/newsletter_img.png'
-import TimerImg from '../images/NewTimerImg.png'
-import CountDown from '../components/CountdownTimer'
+import jsonData from '../data/data.json';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import Footer from '../components/Footer';
+import { TbTruckReturn } from 'react-icons/tb'
+import React,  { useState, useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { MdOutlineLocalShipping } from 'react-icons/md'
+import { RiCustomerService2Fill } from 'react-icons/ri'
+
+import { SmallCard, ProductComp, ClientComp, CountDown, Footer } from '../components';
+import { Search, AddToCart, Delivery, ShoppingBags, NewsletterImg, TimerImg, HomeImg } from '../images';
 
 
 

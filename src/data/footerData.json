@@ -1,0 +1,48 @@
+{
+    "footerHeader": [
+        {
+            "info": "info@mydomain.com"
+        },
+        {
+            "info": "+234 902 868 6300"
+        }
+    ],
+
+    "customerServices": [
+        {
+            "info": "Collections & Delivery"
+        },
+        {
+            "info": "Returns & Refund"
+        },
+        {
+            "info": "Terms & Conditions"
+        },
+        {
+            "info": "Delivery Return"
+        },
+        {
+            "info": "Store Location"
+        }
+    ],
+
+    "quickLinks": [
+        {
+            "info": "Privacy Policy"
+        },
+        {
+            "info": "Terms Of Use"
+        },
+        {
+            "info": "FAQ"
+        },
+        {
+            "info": "Contact"
+        },
+        {
+            "info": "Login / Register"
+        }
+    ]
+
+    
+}

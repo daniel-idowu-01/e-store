@@ -1,11 +1,11 @@
-import React from 'react'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
+import Footer from '../components/Footer'
+import data from '../data/contactData.json'
+import fullMoon from '../images/full_moon.jpg'
+import ContactComp from '../components/ContactComp'
+
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import ContactComp from '../components/ContactComp'
-import data from '../contactData.json'
-import fullMoon from '../images/full_moon.jpg'
-import Footer from '../components/Footer'
 
 const ContactPage = () => {
 

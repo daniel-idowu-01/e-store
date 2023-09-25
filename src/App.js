@@ -7,8 +7,8 @@ import ContactPage from "./pages/ContactPage";
 import Cart from "./pages/Cart";
 import Favorites from "./pages/Favorites";
 import { Routes, Route } from "react-router-dom";
-import { CartProvider } from "./CartContext";
-import {FavoriteProvider} from "./FavoriteContext";
+import { CartProvider } from "./context/CartContext";
+import {FavoriteProvider} from "./context/FavoriteContext";
 
 function App() {
   
