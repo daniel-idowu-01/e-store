@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SmallCard = (props) => {
+const HowItWorks = (props) => {
   return (
     <div className='flex items-center justify-between w-full md:w-60 h-24 shadow-sm border m-2'>
         <div className='p-2 ml-2 md:ml-0'>
@@ -15,6 +15,6 @@ const SmallCard = (props) => {
   )
 }
 
-export default SmallCard
+export default HowItWorks
 
 /* 6C63FF */

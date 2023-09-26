@@ -8,7 +8,7 @@ import { useInView } from 'react-intersection-observer';
 import { MdOutlineLocalShipping } from 'react-icons/md'
 import { RiCustomerService2Fill } from 'react-icons/ri'
 
-import { SmallCard, ProductComp, ClientComp, CountDown, Footer } from '../components';
+import { HowItWorks, ProductComp, ClientComp, CountDown, Footer } from '../components';
 import { Search, AddToCart, Delivery, ShoppingBags, NewsletterImg, TimerImg, HomeImg } from '../images';
 
 
@@ -208,10 +208,10 @@ const HomePage = () => {
             <p className='text-xs text-coolblue'>Work Processing</p>
             <p className='text-2xl font-bold'>How It Work Processing</p>
             <div className='md:flex justify-evenly mt-5 px-10'>
-                <SmallCard header='Filter & Discover' text='Filtering & Suggestions make it easy to find' image={ Search } />
-                <SmallCard header='Add To Cart' text='Select the correct items and add them to the cart' image={ AddToCart } />
-                <SmallCard header='Fast Shipping' text='The carrier will confirm and ship quickly to you' image={ Delivery } />
-                <SmallCard header='Enjoy The Product' text='The carrier will confirm and ship quickly to you' image={ ShoppingBags } />
+                <HowItWorks header='Filter & Discover' text='Filtering & Suggestions make it easy to find' image={ Search } />
+                <HowItWorks header='Add To Cart' text='Select the correct items and add them to the cart' image={ AddToCart } />
+                <HowItWorks header='Fast Shipping' text='The carrier will confirm and ship quickly to you' image={ Delivery } />
+                <HowItWorks header='Enjoy The Product' text='The carrier will confirm and ship quickly to you' image={ ShoppingBags } />
             </div>
         </div>
 

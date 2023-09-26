@@ -1,9 +1,9 @@
-import SmallCard from './SmallCard'
+import HowItWorks from './HowItWorks'
 import ProductComp from './ProductComp'
 import ClientComp from './ClientComp'
 import CountDown from './CountdownTimer'
 import Footer from './Footer'
 
 export {
-    SmallCard, ProductComp, ClientComp, CountDown, Footer
+    HowItWorks, ProductComp, ClientComp, CountDown, Footer
 }

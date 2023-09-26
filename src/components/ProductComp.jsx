@@ -1,7 +1,8 @@
+import { FullStar } from '../images'
 import CartContext from '../context/CartContext'
-import FullStar from '../images/full-star.png'
-import FavoriteContext from '../context/FavoriteContext'
+
 import React, { useState, useContext } from 'react'
+import FavoriteContext from '../context/FavoriteContext'
 import { AiOutlineShoppingCart, AiOutlineHeart } from 'react-icons/ai'
 
 const ProductComp = ({name, price, image, count}) => {
@@ -10,6 +11,7 @@ const ProductComp = ({name, price, image, count}) => {
   const {alertWishList} = useContext(FavoriteContext)
   const {addToCart} = useContext(CartContext)
   const {addToFavorites} = useContext(FavoriteContext)
+  
 
   //function when item is added to cart
   const cartFunction = () => {
@@ -63,8 +65,6 @@ const ProductComp = ({name, price, image, count}) => {
           </div>
         </div>
       </div>
-      
-      
         
     </div>
   )
