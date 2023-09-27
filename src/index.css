@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.app {
+    font-family: 'Montserrat', sans-serif;
+}
 
 .circle {
     border-radius: 50%;
@@ -9,4 +15,8 @@
 /* Apply alternating styles to the table rows */
 .tr:nth-child(even) {
     @apply bg-gray-100;
+}
+
+.btn {
+    @apply text-white bg-coolblue p-3 px-5 w-1/2 md:w-1/4 rounded-full hover:opacity-80;
 }

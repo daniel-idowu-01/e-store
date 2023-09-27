@@ -1,23 +1,15 @@
 import jsonData from '../data/data.json';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { TbTruckReturn } from 'react-icons/tb'
-import React,  { useState, useEffect } from 'react';
+import React,  { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { MdOutlineLocalShipping } from 'react-icons/md'
-import { RiCustomerService2Fill } from 'react-icons/ri'
-
-import { HowItWorks, ProductComp, ClientComp, CountDown, Footer } from '../components';
-import { Search, AddToCart, Delivery, ShoppingBags, NewsletterImg, TimerImg, HomeImg } from '../images';
+import { Header, HowItWorks, ClientComp, FeaturedProd, CountDown, Footer } from '../components';
+import { Search, AddToCart, Delivery, ShoppingBags, NewsletterImg, TimerImg } from '../images';
 
 
 
 const HomePage = () => {
-
-    const [items, setItems] = useState([])
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(null);
 
     // Animation
     const controls = useAnimation();
@@ -34,40 +26,6 @@ const HomePage = () => {
         }
     }, [controls, inView]);
 
-
-    // API call
-    useEffect(() => {
-        fetch('https://fakestoreapi.com/products?limit=5')
-        .then(res => res.json())
-        .then(json => {
-            setIsLoading(false);
-            setItems(json)
-        })
-        .catch(error => {
-            setIsLoading(false);
-            setError(error);
-          });
-    }, [])
-
-      /* Action when content is loading */
-  if (isLoading) {
-    return (
-        <div className='flex justify-center items-center'>
-            <p className='text-3xl'>Loading...</p>
-        </div>
-        
-    )
-  }
-
-  /* Action when content contains error */
-  if (error) {
-    return (
-        <div className='flex justify-center items-center'>
-            <p className='text-3xl'>Error: {error.message}</p>
-        </div>
-        
-    )
-  }
 
   const responsive = {
     superLargeDesktop: {
@@ -96,112 +54,10 @@ const HomePage = () => {
       animate={controls}
       transition={{ duration: 0.5 }}
       className='overflow-x-hidden'>
-        {/* Header */}
-        <div className='md:flex justify-center items-center mt-5 md:mt-0 mx-10'>
-            <div className='flex flex-col gap-7 md:w-1/2'>
-                <p className='capitalize'>In this season, find the best</p>
-                <p className='text-3xl md:text-5xl font-bold w-auto'>Exclusive Collection For Everyone</p>
-                <p className='text-sm md:w-96 '>Here's A Voice That Keeps On Calling Me Down The Road. That's Where I'll Always Be</p>
-                <button className='text-white bg-coolblue p-3 px-5 w-1/2 md:w-1/4 rounded-full hover:opacity-80'>Shop Now</button>
 
-                {/* Design For Laptop */}
-                <div className='hidden md:flex shadow-lg justify-evenly relative top-32 divide-x-2'>
-                    <div className='flex items-center gap-2 p-5'>
-                        <MdOutlineLocalShipping className='h-fit' />
-                        <div>
-                            <p>Free Shipping</p>
-                            <p className='text-xs'>$39 Per Order</p>
-                        </div>
-                    </div>
-
-                    <div className='flex items-center gap-2 p-5'>
-                        <TbTruckReturn />
-                        <div>
-                            <p>14-Day Return</p>
-                            <p className='text-xs'>Shop With Confidence</p>
-                        </div>
-                    </div>
-
-                    <div className='flex items-center gap-2 p-5'>
-                        <RiCustomerService2Fill />
-                        <div>
-                            <p>24/7 Support</p>
-                            <p className='text-xs'>Delivered To Your Door</p>
-                        </div>  
-                    </div>
-                </div>
-
-            </div>
-
-            <div className='flex justify-center items-center '>
-                <span
-                 className='absolute -z-10  w-72 h-72 md:w-96 md:h-96 rounded-full rotate-45 bg-black  opacity-5'>
-                </span>
-                <span
-                 className='relati~~zve -z-10 w-20 h-20 -top-40 rounded-full rotate-45 bg-black opacity-5'>
-                </span>
-                <span
-                 className='relative -z-10 w-10 h-10 -top-60 rounded-full rotate-45 bg-black opacity-5'>
-                </span>
-                <span
-                 className='relative -z-10 w-5 h-5 -top-72 -left-24 rounded-full rotate-45 bg-black opacity-5'>
-                </span>
-                <img src={ HomeImg } className='' alt=''  />
-            </div>
-
-             {/* Design For Mobile */}
-                <div className=' md:hidden shadow-lg justify-center items-center px-10 md:px-5 divide-y-2 '>
-                    <div className='flex justify-center items-center gap-2 p-5'>
-                        <MdOutlineLocalShipping className='' />
-                        <div>
-                            <p className='text-sm md:text-md font-bold'>Free Shipping</p>
-                            <p className='text-xs'>$39 Per Order</p>
-                        </div>
-                    </div>
-
-                    <div className='flex justify-center items-center gap-2 p-5'>
-                        <TbTruckReturn />
-                        <div>
-                            <p className='text-sm md:text-md font-bold'>14-Day Return</p>
-                            <p className='text-xs'>Shop With Confidence</p>
-                        </div>
-                    </div>
-
-                    <div className='flex justify-center items-center gap-2 p-5'>
-                        <RiCustomerService2Fill />
-                        <div>
-                            <p className='text-sm md:text-md font-bold'>24/7 Support</p>
-                            <p className='text-xs'>Delivered To Your Door</p>
-                        </div>  
-                    </div>
-                </div>
-        </div>
-        {/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||| */}
-
-        {/* Featured Product */}
-        <div className='mt-20 mx-10'>
-            <div className='text-center'>
-                <p className='text-xs text-coolblue'>Featured Products</p>
-                <p className='text-2xl font-bold'>Our Featured Collection</p>
-                <div className='md:flex mt-5'>
-                    { items.map((item, index) => {
-                        return (
-                            <ProductComp
-                             key={index}
-                              name={item.title}
-                               image={item.image}
-                                price={item.price}
-                                 rating={item.rating.rate}
-                                  count={item.rating.count}
-                            />
-                        )
-                    })}
-                </div>
-                
-            </div>
-        </div>
-
-        {/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||| */}
+        <Header />
+        
+        <FeaturedProd />
 
         {/* How It Works */}
         <div className='text-center mt-20 md:px-0'>

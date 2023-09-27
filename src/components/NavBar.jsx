@@ -11,7 +11,7 @@ const NavBar = () => {
 
   const [sideBar, setShowSideBar] = useState(false)
   const sideBarLinkStyle = 'hover:text-coolblue'
-  const navLinkStyle ='hidden md:block hover:text-coolblue'
+  const navLinkStyle ='hidden md:block hover:text-coolblue text-lg'
   const iconStyle = 'text-xl cursor-pointer hover:text-coolblue'
   const mobileIconStyle = 'hover:text-coolblue text-2xl cursor-pointer'
   const sidebarStyle = `${sideBar ? 'flex' : 'hidden'} md:hidden flex-col gap-10 text-center w-full shadow-md pt-5 pb-10 px-10`
@@ -26,7 +26,7 @@ const NavBar = () => {
   // links data
   const links = [
     {
-      'link': 'home',
+      'link': '',
       'linkTitie': 'Home'
     },
     {
@@ -45,19 +45,20 @@ const NavBar = () => {
 
   return (
     <nav className='sticky top-0 z-10 bg-white shadow-sm'>
-      <div className='flex justify-between py-7 px-10 md:px-20'>
-        <div className=''>
-          <Link to='/' className='font-bold'>
-            <span className='text-coolblue italic text-lg'>
-              E</span>-STORE
+      <div className='flex justify-between py-8 px-10 md:px-20'>
+          <Link to='/'>
+            <p className='font-bold'>
+              <span className='text-coolblue italic text-xl'>
+                E
+              </span>-STORE
+            </p>
           </Link>
-        </div>
 
-        <div className='flex justify-between gap-10 relative left-14'>
+        <div className='flex justify-between gap-14 relative left-14'>
           {
             links.map((link) => (
               <Link 
-              to={`/${link}`} 
+              to={`/${link.link}`} 
               className={navLinkStyle}>
                 {link.linkTitie}
               </Link>

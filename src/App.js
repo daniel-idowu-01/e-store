@@ -13,7 +13,7 @@ import {FavoriteProvider} from "./context/FavoriteContext";
 function App() {
   
   return (
-    <div className="App">
+    <div className="app">
       <CartProvider>
         <FavoriteProvider>
           <NavBar />

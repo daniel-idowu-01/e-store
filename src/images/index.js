@@ -4,11 +4,11 @@ import Delivery from './delivery.svg'
 import ShoppingBags from './shopping_bags.svg'
 import NewsletterImg from './newsletter_img.png'
 import TimerImg from './NewTimerImg.png'
-import HomeImg from './home-image.png'
+import HeaderImage from './headerImage.svg'
 import Fullmoon from './full_moon.jpg'
 import Stores from './stores.png'
 import FullStar from './full-star.png'
 
 export {
-    Search, AddToCart, Delivery, ShoppingBags, NewsletterImg, TimerImg, HomeImg, Fullmoon, FullStar, Stores
+    Search, AddToCart, Delivery, ShoppingBags, NewsletterImg, TimerImg, HeaderImage, Fullmoon, FullStar, Stores
 }
