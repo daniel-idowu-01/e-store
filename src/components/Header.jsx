@@ -12,12 +12,14 @@ const Header = () => {
 
   return (
     <section className='px-10 pt-10 md:pt-20 md:px-20 border-b-2'>
+        {/* div to style the container of the header elements */}
         <article className={headerContainer}>
+            {/* header content */}
             <div className='flex flex-col gap-7 md:gap-10'>
                 <p className='capitalize text-xl md:text-2xl'>
                     In this season, find the best
                 </p>
-                <p className='text-3xl md:text-6xl font-bold md:w-11/12 leading-relaxed '>
+                <p className='text-3xl md:text-6xl font-semibold md:w-11/12 leading-relaxed'>
                     Exclusive Collection For Everyone
                 </p>
                 <p className='text-lg md:text-xl leading-relaxed md:w-11/12'>
@@ -26,6 +28,7 @@ const Header = () => {
                 <button className='btn'>Shop Now</button>
             </div>
 
+            {/* header image */}
             <div className='relative flex justify-center items-center '>
                 <span
                 className={`${imageBubble} w-72 h-72 md:w-96 md:h-96`}>
@@ -40,7 +43,7 @@ const Header = () => {
             </div>
         </article>
 
-        {/*  */}
+        {/* div for the features section */}
         <article className={itemsStyle}>
             <div className='flex items-center gap-2 p-5'>
                 <MdOutlineLocalShipping />

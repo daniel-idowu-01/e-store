@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import data from '../data/teamData.json'
-import jsonData from '../data/data.json';
 import Footer from '../components/Footer';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import TeamMember from '../components/TeamMember'
 import ClientComp from '../components/ClientComp'
+import jsonData from '../data/testimonialData.json';
 import NewsletterImg from '../images/newsletter_img.png'
 
 import { BiPackage } from 'react-icons/bi'

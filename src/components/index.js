@@ -1,11 +1,14 @@
+import Timer from './Timer'
 import Header from './Header'
-import HowItWorks from './HowItWorks'
-import ProductComp from './ProductComp'
-import ClientComp from './ClientComp'
-import FeaturedProd from './FeaturedProd'
-import CountDown from './CountdownTimer'
 import Footer from './Footer'
+import HowItWorks from './HowItWorks'
+import ClientComp from './ClientComp'
+import ProductComp from './ProductComp'
+import CountDown from './CountdownTimer'
+import FeaturedProd from './FeaturedProd'
+import Testimonials from './Testimonials'
+import HowItWorksComp from './HowItWorksComp'
 
 export {
-    Header, HowItWorks, ProductComp, ClientComp, FeaturedProd, CountDown, Footer
+    Header, HowItWorksComp, HowItWorks, ProductComp, ClientComp, FeaturedProd, CountDown, Timer, Footer, Testimonials
 }

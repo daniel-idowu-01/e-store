@@ -1,11 +1,9 @@
-import jsonData from '../data/data.json';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import { NewsletterImg } from '../images';
 import React,  { useEffect } from 'react';
+import 'react-multi-carousel/lib/styles.css';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Header, HowItWorks, ClientComp, FeaturedProd, CountDown, Footer } from '../components';
-import { Search, AddToCart, Delivery, ShoppingBags, NewsletterImg, TimerImg } from '../images';
+import { Header, FeaturedProd, HowItWorks, Timer, Footer, Testimonials } from '../components';
 
 
 
@@ -27,25 +25,7 @@ const HomePage = () => {
     }, [controls, inView]);
 
 
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
-  };
+
 
   return (
     <motion.div
@@ -59,67 +39,11 @@ const HomePage = () => {
         
         <FeaturedProd />
 
-        {/* How It Works */}
-        <div className='text-center mt-20 md:px-0'>
-            <p className='text-xs text-coolblue'>Work Processing</p>
-            <p className='text-2xl font-bold'>How It Work Processing</p>
-            <div className='md:flex justify-evenly mt-5 px-10'>
-                <HowItWorks header='Filter & Discover' text='Filtering & Suggestions make it easy to find' image={ Search } />
-                <HowItWorks header='Add To Cart' text='Select the correct items and add them to the cart' image={ AddToCart } />
-                <HowItWorks header='Fast Shipping' text='The carrier will confirm and ship quickly to you' image={ Delivery } />
-                <HowItWorks header='Enjoy The Product' text='The carrier will confirm and ship quickly to you' image={ ShoppingBags } />
-            </div>
-        </div>
+        <HowItWorks />
 
-        {/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||| */}
+        <Timer />
 
-        {/* Timer */}
-        <div className='md:flex justify-center px-10 mt-20'>
-            {/* Div for timer section */}
-            <div className='md:flex flex-col gap-5 p-5 md:w-1/2 bg-black bg-opacity-5'>
-                {/* Div to flex DEAL OF THE WEEK & 20% OFF */}
-                <div className='md:flex justify-between items-center'>
-                    <div>
-                        <p className='text-xs text-coolblue'>Deal Of The Week</p>
-                        <p className='text-2xl font-bold mt-3 md:mt-0'>Deal Of The Week. Let's Go Shopping Today</p>
-                    </div>
-
-                    <div className='mt-5 md:mr-5 md:mt-0'>
-                        <p className='w-28 h-28 text-white text-center text-xl pt-2 px-5 bg-coolblue circle relative left-1/4'>Up To <span className='text-2xl'>28%</span> Off</p>
-                    </div>
-                </div>
-
-                <p className='my-3 md:mt-0'>Hurry Up! Offer Ends In</p>
-
-                <CountDown />
-                <button className='md:w-1/4 mt-5 md:mt-0 text-white bg-coolblue p-3 px-5 rounded-full hover:opacity-80'>Shop Now</button>
-            </div>
-
-            {/* Div for Image */}
-            <div className='border bg-coolblue bg-opacity-5'>
-                <img src={ TimerImg } alt='' className='h-52 md:h-96 object-contain' />
-            </div>
-        
-        </div>
-
-        {/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||| */}
-
-        {/* Testimonial */}
-        <div className='text-center mt-20 bg-black bg-opacity-5 p-5 md:mx-14'>
-            <p className='text-xs text-coolblue'>Our Testimonial</p>
-            <p className='text-2xl font-bold'>What Our Clients Say</p>
-            
-            <div className='px-10'>
-                <Carousel
-                 responsive={responsive}>
-                {  
-                 jsonData.items.map(item => (
-                    <ClientComp name={item.name} text={item.text} image={item.image} job={item.job}
-                     />
-                ))}
-                </Carousel>
-            </div>
-        </div>
+        <Testimonials />
 
         {/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||| */}
 

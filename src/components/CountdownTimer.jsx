@@ -54,7 +54,7 @@ const CountdownTimer = ({ hours = 10, minutes = 20, seconds = 5 }) => {
   };
 
   return (
-    <div className='flex justify-evenly md:justify-start'>
+    <div className='flex justify-start'>
       <div className={timerStyle}>
         <span> {formatTime(remainingHours)} </span>
         <span className='block text-sm'>Hours </span>

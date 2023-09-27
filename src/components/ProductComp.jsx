@@ -39,12 +39,12 @@ const ProductComp = ({name, image, price, rating, count}) => {
   
   return (
     <div
-     className={`hover:cursor-pointer hover:scale-105 h-64 relative w-full md:w-60`}>
+     className='hover:cursor-pointer hover:scale-105 h-64 relative w-full md:w-60'>
 
         <img src={image} alt='' className='border h-52 w-full object-contain p-5' />
 
-        <article className='flex flex-col gap-[10px] border bg-coolblue bg-opacity-5 p-2'>
-          <div className='flex relative left-[48%]'>
+        <article className='relative flex flex-col gap-[10px] border bg-coolblue bg-opacity-5 p-2'>
+          <div className='flex relative right-0'>
             <img src={ FullStar } alt='' className='h-4 w-4' />
             <img src={ FullStar } alt='' className='h-4 w-4' />
             <img src={ FullStar } alt='' className='h-4 w-4' />
@@ -53,8 +53,8 @@ const ProductComp = ({name, image, price, rating, count}) => {
             <p className='text-xs'>({count})</p>
           </div>
 
-          <div className='text-center'>
-              <p className='text-xs object-contain '>{name}</p>
+          <div>
+              <p className='text-sm text-left'>{name}</p>
           </div>
 
           <div className='flex justify-between'>
