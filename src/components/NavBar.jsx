@@ -47,10 +47,10 @@ const NavBar = () => {
     <nav className='sticky top-0 z-10 bg-white shadow-sm'>
       <div className='flex justify-between py-8 px-10 md:px-20'>
           <Link to='/'>
-            <p className='font-bold'>
-              <span className='text-coolblue italic text-xl'>
-                E
-              </span>-STORE
+            <p className='font-[900] text-xl'>
+              <span className='text-coolblue'>
+                shop
+              </span>bliss
             </p>
           </Link>
 

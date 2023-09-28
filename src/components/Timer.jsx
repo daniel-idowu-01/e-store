@@ -15,7 +15,7 @@ const Timer = () => {
             {/* Div to flex DEAL OF THE WEEK & 20% OFF */}
             <div
              className='flex flex-col md:flex-row gap-5 md:gap-0'>
-                <div>
+                <div className='leading-loose'>
                     <p className='text-xs text-coolblue'>
                         Deal Of The Week
                     </p>
