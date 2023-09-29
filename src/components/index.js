@@ -1,6 +1,7 @@
 import Timer from './Timer'
 import Header from './Header'
 import Footer from './Footer'
+import Recommend from './Recommend'
 import Newsletter from './Newsletter'
 import HowItWorks from './HowItWorks'
 import ClientComp from './ClientComp'
@@ -11,5 +12,5 @@ import Testimonials from './Testimonials'
 import HowItWorksComp from './HowItWorksComp'
 
 export {
-    Header, HowItWorksComp, HowItWorks, ProductComp, ClientComp, FeaturedProd, CountDown, Timer, Footer, Testimonials, Newsletter
+    Header, HowItWorksComp, HowItWorks, ProductComp, ClientComp, FeaturedProd, CountDown, Timer, Footer, Testimonials, Newsletter, Recommend
 }
