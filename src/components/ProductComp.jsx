@@ -39,7 +39,7 @@ const ProductComp = ({name, image, price, rating, count}) => {
   
   return (
     <div
-     className='hover:cursor-pointer hover:scale-105 h-64 relative w-full md:w-60'>
+     className='hover:cursor-pointer hover:scale-105 relative w-full md:w-60'>
 
         <img src={image} alt='' className='border h-52 w-full object-contain p-5' />
 

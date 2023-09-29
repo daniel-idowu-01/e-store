@@ -1,9 +1,10 @@
-import React from 'react'
 import '../index.css'
+import React from 'react'
+import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { GrPowerReset } from 'react-icons/gr'
 import ProductComp from '../components/ProductComp'
+import { motion, useAnimation } from 'framer-motion';
 
 const ShopPage = () => {
 
@@ -14,23 +15,12 @@ const ShopPage = () => {
   const [category, setCategory] = useState('electronics');
   const [showDefault, setShowDefault] = useState(true)
 
-  // animation 
-  const controls = useAnimation();
-    const { ref, inView } = useInView({
-        triggerOnce: true, // Ensures the animation only triggers once
-        threshold: 0.1, // Sets the visibility threshold for triggering the animation
-    });
+  const container = 'grid md:grid-cols-5 text-center place-items-center overflow-x-hidden'
 
+    // to fetch the default data
     useEffect(() => {
-        if (inView) {
-        controls.start({ opacity: 1, y: 0 });
-        } else {
-        controls.start({ opacity: 0, y: 50 });
-        }
-    }, [controls, inView]);
-
-    useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
+      const fetchProducts = async () => {
+        await fetch('https://fakestoreapi.com/products')
         .then(res => res.json())
         .then(json => {
             setIsLoading(false);
@@ -40,10 +30,16 @@ const ShopPage = () => {
             setIsLoading(false);
             setError(error);
           });
+      }
+
+      fetchProducts();
+
     }, [])
 
+    // to fetch the data based on categories selected
     useEffect(() => {
-      fetch(`https://fakestoreapi.com/products/category/${category}`)
+      const fetchCategoryProducts = async () => {
+        fetch(`https://fakestoreapi.com/products/category/${category}`)
         .then(res => res.json())
         .then(json => {
             setIsLoading(false);
@@ -53,6 +49,10 @@ const ShopPage = () => {
           setIsLoading(false);
           setError(error);
         });
+      }
+
+      fetchCategoryProducts();
+      
     }, [category])
     
 
@@ -83,43 +83,72 @@ const ShopPage = () => {
   };
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={controls}
-      transition={{ duration: 0.5 }}>
+    <motion.div className='px-10 md:px-20 py-10'>
 
       {/* To filter items */}
-      <div className='flex justify-start mx-10 md:mx-20'>
-        <select value={category} onChange={handleCategoryChange} className='border px-5 py-2'>
-          <option value='electronics' disabled>Select Category</option>
-          <option value='electronics'>Electronics</option>
-          <option value='jewelery'>Jewelery</option>
-          <option value="men's%20clothing">Men's Clothing</option>
-          <option value="women's%20clothing">Women's Clothing</option>
+      <div className='flex items-center gap-2 justify-start'>
+
+        <select
+         value={category} 
+         onChange={handleCategoryChange} 
+         className='hover:cursor-pointer outline-none border px-5 py-2'
+         >
+          <option
+           value='' disabled>
+            Select Category
+          </option>
+
+          <option
+           value='electronics'>
+            Electronics
+          </option>
+
+          <option
+           value='jewelery'>
+            Jewelery
+          </option>
+
+          <option
+           value="men's%20clothing">
+            Men's Clothing
+          </option>
+
+          <option
+           value="women's%20clothing">
+            Women's Clothing
+          </option>
         </select>
+
+        <GrPowerReset
+         className='cursor-pointer text-lg'
+         onClick={() => setShowDefault(true)} 
+         />
+
       </div>
       
 
-    {/* To show items */}
+      {/* To show items */}
       { showDefault ? <div
-       className='grid md:grid-cols-4 text-center place-items-center mt-5 mx-10 overflow-x-hidden'>
+       className={container}>
         { items.map((item) => {
             return (
+              <Link to={`/shop/${item.id}`}>
                 <ProductComp
-                  key={item.id}
-                  name={item.title}
-                    image={item.image}
-                    price={item.price}
-                      rating={item.rating.rate}
-                      count={item.rating.count}
-                />
+                    key={item.id}
+                    name={item.title}
+                      image={item.image}
+                      price={item.price}
+                        rating={item.rating.rate}
+                        count={item.rating.count}
+                  />
+              </Link>
+                
             )
         })}
      </div>
       :
       <div
-        className='grid md:grid-cols-4 text-center place-items-center mt-5 mx-10 overflow-x-hidden'>
+        className={container}>
         { categoryItems.map((item) => {
             return (
                 <ProductComp
@@ -134,8 +163,6 @@ const ShopPage = () => {
         })}
       </div> 
     }
-
-
      
     </motion.div>
   )

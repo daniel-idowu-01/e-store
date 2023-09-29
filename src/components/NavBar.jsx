@@ -56,8 +56,9 @@ const NavBar = () => {
 
         <div className='flex justify-between gap-14 relative left-14'>
           {
-            links.map((link) => (
+            links.map((link, index) => (
               <Link 
+               key={index}
               to={`/${link.link}`} 
               className={navLinkStyle}>
                 {link.linkTitie}
@@ -102,11 +103,11 @@ const NavBar = () => {
       {/* SideBar For Mobile */}
       <div className={sidebarStyle}>
           {
-            links.map((link) => (
+            links.map((link, index) => (
               <Link 
-              to={`/${link}`} 
-              className={sideBarLinkStyle}
-              onClick={() => setShowSideBar(false)}>
+               key={index}
+              to={`/${link.link}`} 
+              className={navLinkStyle}>
                 {link.linkTitie}
               </Link>
             ))
