@@ -10,8 +10,8 @@ import { AiOutlineUser, AiOutlineHeart, AiOutlineSearch} from 'react-icons/ai'
 const NavBar = () => {
 
   const [sideBar, setShowSideBar] = useState(false)
-  const sideBarLinkStyle = 'hover:text-coolblue'
   const navLinkStyle ='hidden md:block hover:text-coolblue text-lg'
+  const sideBarLinkStyle ='hover:text-coolblue text-lg'
   const iconStyle = 'text-xl cursor-pointer hover:text-coolblue'
   const mobileIconStyle = 'hover:text-coolblue text-2xl cursor-pointer'
   const sidebarStyle = `${sideBar ? 'flex' : 'hidden'} md:hidden flex-col gap-10 text-center w-full shadow-md pt-5 pb-10 px-10`
@@ -21,7 +21,6 @@ const NavBar = () => {
   }
 
   const {items} = useContext(CartContext);
-  const {favorites} = useContext(FavoriteContext);
 
   // links data
   const links = [
@@ -59,8 +58,9 @@ const NavBar = () => {
             links.map((link, index) => (
               <Link 
                key={index}
-              to={`/${link.link}`} 
-              className={navLinkStyle}>
+               to={`/${link.link}`} 
+               className={navLinkStyle}
+               >
                 {link.linkTitie}
               </Link>
             ))
@@ -71,11 +71,6 @@ const NavBar = () => {
           <AiOutlineSearch
            className={`${iconStyle} hidden md:block`} 
            />
-
-          <Link to='/favorites' className='hidden md:flex'>
-            <AiOutlineHeart className={iconStyle} />
-            <span>{favorites.length}</span>
-          </Link>
 
           <AiOutlineUser
            className={`${iconStyle} hidden md:block`} 
@@ -106,8 +101,9 @@ const NavBar = () => {
             links.map((link, index) => (
               <Link 
                key={index}
-              to={`/${link.link}`} 
-              className={navLinkStyle}>
+               to={`/${link.link}`} 
+               className={sideBarLinkStyle}
+               >
                 {link.linkTitie}
               </Link>
             ))
@@ -117,14 +113,6 @@ const NavBar = () => {
           <AiOutlineSearch
            className={mobileIconStyle} 
            />
-
-          <Link
-           to='/favorites' 
-           className='flex' 
-           onClick={() => setShowSideBar(false)}>
-            <AiOutlineHeart className={mobileIconStyle} />
-            <span>{favorites.length}</span>
-          </Link>
 
           <AiOutlineUser
            className={mobileIconStyle} 

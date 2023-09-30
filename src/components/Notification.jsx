@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Notification = ({ product }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const notificationStyle = `w-fit p-10 rounded-md fixed left-10 bottom-10 bg-deepNavyBlue border border-gold h-30 cart-notification ${isVisible ? 'block' : 'hidden'}`
+  const notificationStyle = `shadow-md w-fit p-10 rounded-md fixed right-10 bottom-10 border border-gold h-30 cart-notification ${isVisible ? 'block' : 'hidden'} z-20 bg-white`
 
   useEffect(() => {
     // Show the notification when the product is added to the cart
@@ -19,7 +19,7 @@ const Notification = ({ product }) => {
 
   return (
     <div className={notificationStyle}>
-      <p>{product} has been added to your saved movies</p>
+      <p>Item has been added to your cart</p>
     </div>
   );
 };

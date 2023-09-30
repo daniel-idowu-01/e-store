@@ -8,6 +8,8 @@ const Cart = () => {
 
     const { items, calculateTotalPrice } =  useContext(CartContext);
 
+    const tableHead = 'bg-gray-300 p-3 font-semibold text-left'
+
     // Animation
     const controls = useAnimation();
     const { ref, inView } = useInView({
@@ -42,6 +44,12 @@ const Cart = () => {
         items: 1
       }
     };
+
+    const handleFilter = () => {
+      items.filter(item => (
+        item !== item
+      ))
+    }
   
 
    return (
@@ -55,10 +63,21 @@ const Cart = () => {
       <table className='w-full border-collapse table-auto'>
         <thead>
           <tr>
-            <th className='bg-gray-300 p-3 font-semibold text-left'>ID</th>
-            <th className='bg-gray-300 p-3 font-semibold text-left'></th>
-            <th className='bg-gray-300 p-3 font-semibold text-left'>Product</th>
-            <th className='bg-gray-300 p-3 font-semibold text-left'>Price</th>
+            <th className={tableHead}>
+              ID
+            </th>
+            <th className={tableHead}>
+
+            </th>
+            <th className={tableHead}>
+              Product
+            </th>
+            <th className={tableHead}>
+              Quantity
+            </th>
+            <th className={tableHead}>
+              Price
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -66,17 +85,37 @@ const Cart = () => {
             ? 
           items.map((item , key) => (
             <tr className='tr'>
-              <td className='p-2'>{key}</td>
-              <td className='p-2'><img className='w-20' src={item.image} alt='' /></td>
-              <td className='p-2'>{item.name}</td>
-              <td className='p-2'>${item.price}</td>
+              <td className='p-2'>
+                {key}
+              </td>
+              <td className='p-2'>
+                <img className='w-20' src={item.image} alt='' />
+              </td>
+              <td className='p-2'>
+                {item.name}
+              </td>
+              <td className='p-2'>
+                {item.quantity}
+              </td>
+              <td className='p-2'>
+                ${item.totalPrice}
+              </td>
+              <td
+               onClick={handleFilter}
+               className='p-2'>
+                x
+              </td>
             </tr>
             )
           )
             : 
-          <p>No items in cart</p> }  
+          <p>No items in cart</p> 
+          }  
         </tbody>
       </table>
+
+
+
 
       <section className='w-full md:w-1/4 md:float-rightn flex flex-col gap-2 border border-gray-500 p-3 mt-5'>
         <p className='text-xl flex justify-between'>

@@ -24,3 +24,7 @@
 .subscribe-btn {
     @apply text-white bg-coolblue p-3 px-5 w-1/2 md:w-1/4 hover:opacity-80;
 }
+
+.contact-btn {
+    
+}

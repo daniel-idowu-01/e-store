@@ -16,12 +16,15 @@ const Header = () => {
         <article className={headerContainer}>
             {/* header content */}
             <div className='flex flex-col gap-7 md:gap-10'>
-                <p className='capitalize text-xl md:text-2xl'>
-                    In this season, find the best
-                </p>
-                <p className='text-3xl md:text-6xl font-semibold md:w-11/12 leading-relaxed'>
-                    Exclusive Collection For Everyone
-                </p>
+                <div className='flex flex-col gap-2'>
+                    <p className='capitalize text-lg'>
+                        In this season, find the best
+                    </p>
+                    <p className='text-3xl md:text-6xl font-semibold md:w-11/12 leading-relaxed'>
+                        Exclusive Collection For Everyone
+                    </p>
+                </div>
+                
                 <p className='text-lg md:text-xl leading-relaxed md:w-11/12'>
                     Here's A Voice That Keeps On Calling Me Down The Road. That's Where I'll Always Be
                 </p>

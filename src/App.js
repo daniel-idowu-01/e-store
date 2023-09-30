@@ -3,7 +3,6 @@ import ShopPage from "./pages/ShopPage";
 import NavBar from "./components/NavBar";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
-import Favorites from "./pages/Favorites";
 import { useState, useEffect } from "react";
 import ContactPage from "./pages/ContactPage";
 import { Routes, Route } from "react-router-dom";
@@ -26,7 +25,6 @@ function App() {
             <Route path='/shop' element={ <ShopPage/> } />
             <Route path='/shop/:id' element={ <SingleProduct /> } />
             <Route path='/cart' element={ <Cart/> } />
-            <Route path='/favorites' element={ <Favorites/> } />
           </Routes>
         </FavoriteProvider>
         

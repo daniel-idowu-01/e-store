@@ -16,5 +16,3 @@ const HowItWorksComp = ({header, text, image}) => {
 }
 
 export default HowItWorksComp
-
-/* 6C63FF */

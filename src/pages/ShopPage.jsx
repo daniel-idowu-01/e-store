@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { GrPowerReset } from 'react-icons/gr'
 import ProductComp from '../components/ProductComp'
+import ClipLoader from "react-spinners/ClipLoader";
 import { motion, useAnimation } from 'framer-motion';
 
 const ShopPage = () => {
@@ -61,14 +62,17 @@ const ShopPage = () => {
     
 
     /* Action when content is loading */
-  if (isLoading) {
-    return (
-        <div className='flex justify-center items-center'>
-            <p className='text-3xl'>Loading...</p>
-        </div>
-        
-    )
-  }
+    if (isLoading) {
+      return (
+          <div className="flex justify-center items-center h-screen">
+              <ClipLoader
+                  color={'#000'}
+                  loading={isLoading}
+                  size={30}
+              />
+          </div>  
+      )
+    }
 
   /* Action when content contains error */
   if (error) {
@@ -155,6 +159,7 @@ const ShopPage = () => {
         className={container}>
         { categoryItems.map((item) => {
             return (
+              <Link to={`/shop/${item.id}`}>
                 <ProductComp
                   key={item.id}
                   name={item.title}
@@ -163,6 +168,7 @@ const ShopPage = () => {
                       rating={item.rating.rate}
                       count={item.rating.count}
                 />
+            </Link>
             )
         })}
       </div> 

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
 import ProductComp from './ProductComp'
+import React, { useState, useEffect } from 'react'
+import ClipLoader from "react-spinners/ClipLoader";
 
 const FeaturedProd = () => {
 
@@ -23,14 +24,17 @@ const FeaturedProd = () => {
     }, [])
 
     /* Action when content is loading */
-  if (isLoading) {
-    return (
-        <div className='flex justify-center items-center'>
-            <p className='text-3xl p-5'>Loading...</p>
-        </div>
-        
-    )
-  }
+    if (isLoading) {
+      return (
+          <div className="flex justify-center items-center h-screen">
+              <ClipLoader
+                  color={'#000'}
+                  loading={isLoading}
+                  size={30}
+              />
+          </div>  
+      )
+    }
 
   /* Action when content contains error */
   if (error) {

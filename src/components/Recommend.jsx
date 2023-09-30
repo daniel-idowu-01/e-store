@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ProductComp } from '../components'
 import React, { useState, useEffect } from 'react'
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Recommend = ({ category }) => {
 
@@ -30,14 +31,17 @@ const Recommend = ({ category }) => {
 
          
     /* Action when content is loading */
-  if (isLoading) {
-    return (
-        <div className='flex justify-center items-center'>
-            <p className='text-3xl'>Loading...</p>
-        </div>
-        
-    )
-  }
+    if (isLoading) {
+        return (
+            <div className="flex justify-center items-center h-screen">
+                <ClipLoader
+                    color={'#000'}
+                    loading={isLoading}
+                    size={30}
+                />
+            </div>  
+        )
+    }
 
   /* Action when content contains error */
   if (error) {
@@ -52,7 +56,7 @@ const Recommend = ({ category }) => {
   return (
         <div className='relative top-10'>
             <p className='text-lg font-semibold'>You can also check out:</p>
-            <div className='grid grid-cols-5 place-items-center'>
+            <div className='grid md:grid-cols-5 place-items-center gap-5'>
                 {categoryItems.map((item) => (
                     <Link
                         key={item.id}

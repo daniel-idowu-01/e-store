@@ -39,7 +39,7 @@ const ProductComp = ({name, image, price, rating, count}) => {
   
   return (
     <div
-     className='hover:cursor-pointer hover:scale-105 relative w-full md:w-60'>
+     className='hover:cursor-pointer hover:scale-105 relative w-72 md:w-60'>
 
         <img src={image} alt='' className='border h-52 w-full object-contain p-5' />
 
@@ -62,20 +62,6 @@ const ProductComp = ({name, image, price, rating, count}) => {
             <p className={`${rateAverage(rating)} text-sm`}>{rating}</p>
           </div>
       </article>
-      
-
-      {/* Elements to show on hover */}
-        {/* <div
-         className='absolute flex items-center justify-center top-0 w-full h-full'>
-          <div className='flex gap-4'>
-            <button
-             onClick={cartFunction}
-             className='inline-block text-3xl bg-coolblue rounded-full p-2 text-opacity-70 hover:text-white'> <AiOutlineShoppingCart /> </button>
-            <button
-            onClick={favoriteFunction}
-             className='inline-block text-3xl bg-coolblue rounded-full p-2 text-opacity-70 hover:text-white'> <AiOutlineHeart /> </button>
-          </div>
-        </div> */}
         
     </div>
   )
