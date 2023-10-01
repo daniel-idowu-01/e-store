@@ -24,7 +24,7 @@ const AboutPage = () => {
 
   const aboutImage2 ='https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGVvcGxlJTIwYXQlMjB3b3JrfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
 
-  const qualitiesStyle = 'mb-20 flex flex-col md:flex-row md:border gap-7 justify-evenly py-10 md:py-0'
+  const qualitiesStyle = 'mb-20 flex flex-col md:flex-row md:border gap-7 justify-evenly px-10 md:px-20 py-10 md:py-0'
 
   const experienceStyle = 'bg-coolblue relative -top-10 left-5 float-right w-fit px-5 py-2 text-xl md:text-2xl text-white border-white border-4'
 
@@ -68,10 +68,10 @@ const AboutPage = () => {
   return (
     /* Div for whole Component */
     <motion.div
-      className='px-10 md:px-20 py-10'>
+      className=''>
 
       {/* Div for header section */}
-      <header className='flex flex-col md:flex-row justify-between'>
+      <header className='flex flex-col md:flex-row justify-between px-10 md:px-20 py-10'>
 
         {/* Div for elements on the left */}
         <article className=''>
@@ -152,7 +152,7 @@ const AboutPage = () => {
       </div>
 
       {/* Our Team */}
-      <div className=''>
+      <div className='px-10 md:px-20 py-10'>
         <p className='text-center text-xs text-coolblue'>
           Our Team Members
         </p>

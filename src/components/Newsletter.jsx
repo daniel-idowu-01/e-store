@@ -22,7 +22,7 @@ const Newsletter = () => {
                      type='text' 
                      placeholder='Enter Your Email Address' 
                      className={inputStyle} />
-                    <button className='subscribe-btn'>Subscribe</button>
+                    <button className='btn'>Subscribe</button>
                 </div>
             </div>
 

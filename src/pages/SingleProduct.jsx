@@ -67,7 +67,7 @@ const SingleProduct = () => {
 
     //function when item is added to cart
   const cartFunction = () => {
-    addToCart(data.title, data.price, data.image, quantity, data.price * quantity);
+    addToCart(data.id, data.title, data.price, data.image, quantity, data.price * quantity);
     setIsVisible(true)
   }
  

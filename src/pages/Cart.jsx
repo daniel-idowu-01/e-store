@@ -10,54 +10,13 @@ const Cart = () => {
 
     const tableHead = 'bg-gray-300 p-3 font-semibold text-left'
 
-    // Animation
-    const controls = useAnimation();
-    const { ref, inView } = useInView({
-        triggerOnce: true, // Ensures the animation only triggers once
-        threshold: 0.1, // Sets the visibility threshold for triggering the animation
-    });
+    localStorage.setItem('newItems', JSON.stringify(items))
 
-    useEffect(() => {
-        if (inView) {
-        controls.start({ opacity: 1, y: 0 });
-        } else {
-        controls.start({ opacity: 0, y: 50 });
-        }
-    }, [controls, inView]);
-
-    const responsive = {
-      superLargeDesktop: {
-        // the naming can be any, depends on you.
-        breakpoint: { max: 4000, min: 3000 },
-        items: 5
-      },
-      desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 3
-      },
-      tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 2
-      },
-      mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 1
-      }
-    };
-
-    const handleFilter = () => {
-      items.filter(item => (
-        item !== item
-      ))
-    }
+    const newItems = JSON.parse(localStorage.getItem('newItems'))
   
 
    return (
     <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={controls}
-      transition={{ duration: 0.5 }} 
       className='overflow-x-hidden mx-2 md:mx-10 mt-10'>
 
       <table className='w-full border-collapse table-auto'>
@@ -83,7 +42,7 @@ const Cart = () => {
         <tbody>
           { items.length 
             ? 
-          items.map((item , key) => (
+          newItems.map((item , key) => (
             <tr className='tr'>
               <td className='p-2'>
                 {key}
@@ -99,11 +58,6 @@ const Cart = () => {
               </td>
               <td className='p-2'>
                 ${item.totalPrice}
-              </td>
-              <td
-               onClick={handleFilter}
-               className='p-2'>
-                x
               </td>
             </tr>
             )

@@ -55,8 +55,8 @@ const Recommend = ({ category }) => {
 
   return (
         <div className='relative top-10'>
-            <p className='text-lg font-semibold'>You can also check out:</p>
-            <div className='grid md:grid-cols-5 place-items-center gap-5'>
+            <p className='text-lg font-semibold mb-5'>You can also check out:</p>
+            <div className='grid md:grid-cols-5 place-items-start gap-5'>
                 {categoryItems.map((item) => (
                     <Link
                         key={item.id}

@@ -16,7 +16,7 @@ const ShopPage = () => {
   const [category, setCategory] = useState('electronics');
   const [showDefault, setShowDefault] = useState(true)
 
-  const container = 'grid md:grid-cols-5 text-center place-items-center overflow-x-hidden'
+  const container = 'grid md:grid-cols-5 gap-5 md:gap-0 text-center place-items-start overflow-x-hidden'
 
     // to fetch the default data
     useEffect(() => {
@@ -99,7 +99,7 @@ const ShopPage = () => {
         <select
          value={category} 
          onChange={handleCategoryChange} 
-         className='hover:cursor-pointer outline-none border px-5 py-2'
+         className='hover:cursor-pointer outline-none border px-5 py-2 mb-5'
          >
           <option
            value='' disabled>

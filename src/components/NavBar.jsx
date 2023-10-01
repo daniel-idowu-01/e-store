@@ -101,8 +101,9 @@ const NavBar = () => {
             links.map((link, index) => (
               <Link 
                key={index}
-               to={`/${link.link}`} 
+               to={`/${link.link}`}
                className={sideBarLinkStyle}
+               onClick={() => setShowSideBar(false)}
                >
                 {link.linkTitie}
               </Link>
