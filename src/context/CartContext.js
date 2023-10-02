@@ -10,18 +10,10 @@ export function CartProvider({ children }) {
     // add to cart function
     const addToCart = (id, name, price, image, quantity, totalPrice) => {
         setItems((prevState) => [...prevState, {id, name, price, image, quantity, totalPrice}]);
-
     }
-
-      // Calculate total price
-    const calculateTotalPrice = items.reduce((total, item) => total + item.price, 0);
-
-    const alertMessage = () => {
-        alert('Item had been added to cart');
-    }
-
+    
     return(
-        <CartContext.Provider value={{ items, addToCart, alertMessage, calculateTotalPrice, quantity, setQuantity }}>
+        <CartContext.Provider value={{ items, addToCart, setItems, quantity, setQuantity }}>
             {children}
         </CartContext.Provider>
     )

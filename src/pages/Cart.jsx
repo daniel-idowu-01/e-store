@@ -2,17 +2,24 @@ import React from 'react'
 import { useContext, useEffect } from 'react'
 import CartContext from '../context/CartContext'
 import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { FaTrashAlt } from 'react-icons/fa'
 
 const Cart = () => {
 
-    const { items, calculateTotalPrice } =  useContext(CartContext);
+    const { items, setItems } =  useContext(CartContext);
 
     const tableHead = 'bg-gray-300 p-3 font-semibold text-left'
+  
+    // function to delete item
+    const deleteItem = (id) => {
+      setItems(items.filter(item => item.id !== id))
+  }
+  
+  // function to calculate the total price
+  const totalPrice = items.reduce((accumulator, item) => {
+    return accumulator + item.totalPrice;
+  }, 0);
 
-    localStorage.setItem('newItems', JSON.stringify(items))
-
-    const newItems = JSON.parse(localStorage.getItem('newItems'))
   
 
    return (
@@ -37,12 +44,15 @@ const Cart = () => {
             <th className={tableHead}>
               Price
             </th>
+            <th className={tableHead}>
+              
+            </th>
           </tr>
         </thead>
         <tbody>
           { items.length 
             ? 
-          newItems.map((item , key) => (
+          items.map((item , key) => (
             <tr className='tr'>
               <td className='p-2'>
                 {key}
@@ -59,6 +69,12 @@ const Cart = () => {
               <td className='p-2'>
                 ${item.totalPrice}
               </td>
+              <td
+               className='hover:cursor-pointer'
+               onClick={() => deleteItem(item.id)}
+               >
+                <FaTrashAlt />
+              </td>
             </tr>
             )
           )
@@ -74,15 +90,15 @@ const Cart = () => {
       <section className='w-full md:w-1/4 md:float-rightn flex flex-col gap-2 border border-gray-500 p-3 mt-5'>
         <p className='text-xl flex justify-between'>
           <span className='text-semibold'>Subtotal: </span>
-          ${calculateTotalPrice}
+          ${totalPrice}
         </p>
         <p className='text-xl flex justify-between'>
           <span className='text-semibold'>Shipping: </span>
-          ${ calculateTotalPrice === 0 ? 0 : 8}
+          ${ totalPrice === 0 ? 0 : 8}
         </p>
         <p className='text-xl flex justify-between'>
         <span className='text-semibold'>Total: </span> 
-          ${ calculateTotalPrice === 0 ? calculateTotalPrice : calculateTotalPrice + 8}
+          ${ totalPrice === 0 ? totalPrice : totalPrice + 8}
         </p>
 
         <button className=' bg-coolblue w-full px-6 py-3 text-white'>Checkout</button>
