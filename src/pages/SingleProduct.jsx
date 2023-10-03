@@ -1,11 +1,12 @@
+import { Link } from 'react-router-dom'
 import { useParams } from 'react-router'
+import { Recommend } from '../components'
+import { BiArrowBack } from 'react-icons/bi'
 import CartContext from '../context/CartContext'
 import ClipLoader from "react-spinners/ClipLoader";
 import Notification from '../components/Notification'
-import { Recommend } from '../components'
 import FavoriteContext from '../context/FavoriteContext'
 import React, { useEffect, useState, useContext } from 'react'
-import { AiOutlineHeart } from 'react-icons/ai'
 
 const SingleProduct = () => {
 
@@ -15,7 +16,6 @@ const SingleProduct = () => {
     const [error, setError] = useState(null);
     const [isVisible, setIsVisible] = useState(false);
     const {addToCart, quantity, setQuantity} = useContext(CartContext)
-    const {addToFavorites} = useContext(FavoriteContext) 
 
     const quantityBtn = 'bg-coolblue px-3 py-1 text-white rounded-md text-lg'
 
@@ -77,6 +77,14 @@ const SingleProduct = () => {
 
   return (
     <section className='px-10 md:px-20 py-10 md:py-20'>
+
+        <Link
+         to='/shop'
+         className='opacity-50'
+         >
+            <BiArrowBack />
+        </Link>
+        
        {/*  div for the container of the header of the page */}
         <div className='flex flex-col md:flex-row gap-10'>
             {/* div for the image */}

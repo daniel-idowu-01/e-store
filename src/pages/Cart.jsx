@@ -1,8 +1,8 @@
 import React from 'react'
-import { useContext, useEffect } from 'react'
-import CartContext from '../context/CartContext'
-import { motion, useAnimation } from 'framer-motion';
+import { useContext } from 'react'
+import { motion } from 'framer-motion';
 import { FaTrashAlt } from 'react-icons/fa'
+import CartContext from '../context/CartContext'
 
 const Cart = () => {
 
@@ -83,9 +83,6 @@ const Cart = () => {
           }  
         </tbody>
       </table>
-
-
-
 
       <section className='w-full md:w-1/4 md:float-rightn flex flex-col gap-2 border border-gray-500 p-3 mt-5'>
         <p className='text-xl flex justify-between'>

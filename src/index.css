@@ -26,5 +26,5 @@
 }
 
 .contact-comp-btn {
-    @apply text-white bg-coolblue p-3 px-5 md:w-1/2 hover:opacity-80;
+    @apply text-white bg-coolblue p-3 px-5 md:w-1/2 hover:opacity-80 text-sm;
 }

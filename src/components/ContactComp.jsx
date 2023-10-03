@@ -17,7 +17,7 @@ const ContactComp = (props) => {
         {/* //////////////// */}
 
         <div className='flex justify-center'>
-            <img src={ props.img } className='rounded-md' alt='' />
+            <img src={ props.img } className='rounded-md w-1/2' alt='' />
         </div>
 
         {/* //////////////// */}
@@ -33,6 +33,7 @@ const ContactComp = (props) => {
               { props.phone }
             </p>
         </div>
+
         {/* //////////////// */}
 
         <div className='md:w-1/4 mt-2 md:mt-0'>
