@@ -10,9 +10,9 @@ import { AiOutlineUser, AiOutlineHeart, AiOutlineSearch} from 'react-icons/ai'
 const NavBar = () => {
 
   const [sideBar, setShowSideBar] = useState(false)
-  const navLinkStyle ='hidden md:block hover:text-coolblue text-lg'
   const sideBarLinkStyle ='hover:text-coolblue text-lg'
   const iconStyle = 'text-xl cursor-pointer hover:text-coolblue'
+  const navLinkStyle ='hidden md:block hover:text-coolblue text-lg'
   const mobileIconStyle = 'hover:text-coolblue text-2xl cursor-pointer'
   const sidebarStyle = `${sideBar ? 'flex' : 'hidden'} md:hidden flex-col gap-10 text-center w-full shadow-md pt-5 pb-10 px-10`
 
@@ -67,7 +67,7 @@ const NavBar = () => {
           }
         </div>
 
-        <div className='flex justify-between gap-7 '>
+        <div className='flex justify-between gap-7'>
           <AiOutlineSearch
            className={`${iconStyle} hidden md:block`} 
            />
