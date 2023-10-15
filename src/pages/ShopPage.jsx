@@ -3,8 +3,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { GrPowerReset } from 'react-icons/gr'
-import ProductComp from '../components/ProductComp'
 import ClipLoader from "react-spinners/ClipLoader";
+import ProductComp from '../components/ProductComp'
 import { motion, useAnimation } from 'framer-motion';
 
 const ShopPage = () => {

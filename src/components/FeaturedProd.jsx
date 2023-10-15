@@ -1,4 +1,5 @@
 import ProductComp from './ProductComp'
+import { Link } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import ClipLoader from "react-spinners/ClipLoader";
 
@@ -54,16 +55,18 @@ const FeaturedProd = () => {
                 <p className='text-xs text-coolblue'>Featured Products</p>
                 <p className='text-2xl font-bold'>Our Featured Collection</p>
                 <div className='px-10 md:px-20 flex flex-col md:flex-row justify-center gap-20 md:gap-5 mt-5'>
-                    { items.map((item, index) => {
+                    { items.map((item) => {
                         return (
-                            <ProductComp
-                              key={index}
-                              name={item.title}
-                              image={item.image}
-                              price={item.price}
-                              rating={item.rating.rate}
-                              count={item.rating.count}
-                            />
+                            <Link to={`/shop/${item.id}`}>
+                                <ProductComp
+                                    key={item.id}
+                                    name={item.title}
+                                    image={item.image}
+                                    price={item.price}
+                                    rating={item.rating.rate}
+                                    count={item.rating.count}
+                                />
+                            </Link>
                         )
                     })}
                 </div>

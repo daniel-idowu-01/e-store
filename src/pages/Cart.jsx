@@ -1,6 +1,6 @@
-import React from 'react'
-import { useContext } from 'react'
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import React, { useContext } from 'react'
 import { FaTrashAlt } from 'react-icons/fa'
 import CartContext from '../context/CartContext'
 
@@ -20,7 +20,7 @@ const Cart = () => {
     return accumulator + item.totalPrice;
   }, 0);
 
-  
+  localStorage.setItem('items', JSON.stringify(items))
 
    return (
     <motion.div
@@ -98,7 +98,9 @@ const Cart = () => {
           ${ totalPrice === 0 ? totalPrice : totalPrice + 8}
         </p>
 
-        <button className=' bg-coolblue w-full px-6 py-3 text-white'>Checkout</button>
+         <Link to='/checkout'>
+          <button className=' bg-coolblue w-full px-6 py-3 text-white'>Checkout</button>
+         </Link>
       </section>
       
     </motion.div>
